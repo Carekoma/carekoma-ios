@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>luisSubscriptionID</key>
+	<string></string>
+	<key>luisAppID</key>
+	<string></string>
+	<key>primaryKey</key>
+	<string></string>
+	<key>secondaryKey</key>
+	<string></string>
+	<key>language</key>
+	<string>ja-JP</string>
+</dict>
+</plist>
