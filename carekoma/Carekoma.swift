@@ -100,4 +100,12 @@ class Carekoma {
     func endSpeechToText(){
         self.speechToText?.end()
     }
+    
+    //テキストを音声に変換
+    func startTextToSpeech(text:String,speaker:TextToSpeech.SpeakerType,callback:TextToSpeechProtocol){
+        TextToSpeech.sharedInstance
+            .setText(text)
+            .setSpeaker(speaker)
+            .textToSpeech(callback)
+    }
 }

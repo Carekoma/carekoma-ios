@@ -63,12 +63,29 @@
                                     <action selector="btnSpeechToTextTestOnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ls5-oY-Tea"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CoO-7f-HoJ">
+                                <rect key="frame" x="247" y="240" width="106" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="5zP-vI-Ru6"/>
+                                    <constraint firstAttribute="width" constant="106" id="JHv-CU-rC5"/>
+                                    <constraint firstAttribute="height" constant="30" id="LvK-eK-3ic"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="106" id="iXo-yq-6qf"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="30" id="k0s-WF-UHo"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="zJW-hj-aue"/>
+                                </constraints>
+                                <state key="normal" title="Text To Speech"/>
+                                <connections>
+                                    <action selector="btnTextToSpeechTestOnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ILh-B6-7cb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="b2Q-p9-DC7" firstAttribute="top" secondItem="GB2-PQ-lhm" secondAttribute="bottom" constant="8" id="3fh-hO-84e"/>
                             <constraint firstItem="Kby-d5-hdn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="EBW-Ma-PGh"/>
+                            <constraint firstItem="CoO-7f-HoJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HGV-FH-mWE"/>
                             <constraint firstItem="FGf-8x-HAp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JlY-Ve-5nO"/>
+                            <constraint firstItem="CoO-7f-HoJ" firstAttribute="top" secondItem="Kby-d5-hdn" secondAttribute="bottom" constant="8" id="c2i-Bp-XY7"/>
                             <constraint firstItem="FGf-8x-HAp" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="56" id="eId-vH-9Tb"/>
                             <constraint firstItem="Kby-d5-hdn" firstAttribute="top" secondItem="b2Q-p9-DC7" secondAttribute="bottom" constant="8" id="lA5-tZ-vAR"/>
                             <constraint firstItem="GB2-PQ-lhm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="n1t-Ga-fGd"/>

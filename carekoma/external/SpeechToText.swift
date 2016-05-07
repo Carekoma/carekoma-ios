@@ -11,13 +11,13 @@ import Foundation
 class SpeechToText:SpeechRecognitionProtocol {
     
     // SpeechToTextSettings.plist を読み込んで保持する
-    var settings:NSDictionary?
+    private var settings:NSDictionary?
     
     //マイク入力からテキスト変換する為のクラス
-    var micClient:MicrophoneRecognitionClient?
+    private var micClient:MicrophoneRecognitionClient?
     
     //認識結果を通知する
-    var callback:SpeechToTextProtocol?
+    private var callback:SpeechToTextProtocol?
     
     //シングルトン インスタンス作成
     class var sharedInstance : SpeechToText {
@@ -30,9 +30,7 @@ class SpeechToText:SpeechRecognitionProtocol {
     //コンストラクタ
     private init(){
         //設定ファイルを読み込んで NSDictionary に保持する
-        if let path = NSBundle.mainBundle().pathForResource("SpeechToTextSettings",ofType:"plist") {
-            self.settings = NSDictionary(contentsOfFile: path)
-        }
+        self.settings = PlistUtil.loadPlist("SpeechToTextSettings")
         
         if let dict = self.settings {
             let mode:SpeechRecognitionMode = SpeechRecognitionMode.LongDictation
@@ -63,19 +61,6 @@ class SpeechToText:SpeechRecognitionProtocol {
         self.micClient?.endMicAndRecognition()
     }
     
-    /*
-    //block 内容をメインスレッドで実行する
-    private func dispatch_async_main(block: () -> ()) {
-        dispatch_async(dispatch_get_main_queue(), block)
-    }
-    */
-    
-    //block 内容をバックグラウンドスレッドで実行する
-    private func dispatch_async_global(block: () -> ()) {
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), block)
-    }
-    
-    
     //認識結果の信頼度パラーメタを文字列に変換する
     static func convertSpeechRecoConfidenceEnumToString(confidence:Confidence) -> String {
         switch (confidence) {
@@ -94,14 +79,14 @@ class SpeechToText:SpeechRecognitionProtocol {
     
     //認識途中の文字列が定期的に通知される
     @objc func onPartialResponseReceived(response: String!) {
-        dispatch_async_global {
+        CommonUtil.dispatch_async_global {
             print("onPartialResponseReceived response:\(response)")
         }
     }
     
     //最終的に認識した文字列等が通知される
     @objc func onFinalResponseReceived(response: RecognitionResult) {
-        dispatch_async_global {
+        CommonUtil.dispatch_async_global {
             print("onFinalResponseReceived")
    
             /*
@@ -118,7 +103,7 @@ class SpeechToText:SpeechRecognitionProtocol {
     
     //エラー発生時
     @objc func onError(errorMessage: String!, withErrorCode errorCode: Int32) {
-        dispatch_async_global {
+        CommonUtil.dispatch_async_global {
             //print("onError errorMessage:\(errorMessage) errorCode:\(errorCode)")
             
             //エラー内容を呼び出し元に通知する
@@ -128,13 +113,13 @@ class SpeechToText:SpeechRecognitionProtocol {
     
     //マイクのステータスが変更されると通知される
     @objc func onMicrophoneStatus(recording: Bool) {
-        dispatch_async_global {
+        CommonUtil.dispatch_async_global {
             print("onMicrophoneStatus recording:\(recording)")
         }
     }
     
     @objc func onIntentReceived(result: IntentResult) {
-        dispatch_async_global {
+        CommonUtil.dispatch_async_global {
             print("onIntentReceived result:\(result)")
         }
     }

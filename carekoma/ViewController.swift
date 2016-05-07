@@ -64,11 +64,37 @@ class ViewController: UIViewController {
         }
         
         //音声認識 開始
-        SpeechToText.sharedInstance.start( Callback() )
+        Carekoma.sharedInstance.startSpeechToText( Callback() )
         
         //仮に音声認識を30秒後に停止する
         NSThread.sleepForTimeInterval(30.0)
-        SpeechToText.sharedInstance.end()
+        Carekoma.sharedInstance.endSpeechToText()
+    }
+
+    //音声合成
+    @IBAction func btnTextToSpeechTestOnClick(sender: AnyObject) {
+        class Callback:TextToSpeechProtocol{
+            //再生の為のプレイヤー
+            var player:WavPlayer?
+            
+            //リクエスト成功時
+            func onResult(data:NSData){
+                print("success data.length:\(data.length)")
+                
+                // 再生
+                self.player = WavPlayer.sharedInstance
+                self.player?.play(data)
+            }
+            
+            //エラー発生時
+            func onError(error:NSError?){
+                print("Failed with error: \(error)")
+            }
+        }
+        
+        Carekoma.sharedInstance.startTextToSpeech("こんにちは、ぼくのことは、ケアコマって、よんでください。",
+                                                  speaker:TextToSpeech.SpeakerType.HIKARI,
+                                                  callback: Callback())
     }
 }
 

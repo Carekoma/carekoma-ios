@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		450699F91CDDEADF00AE5731 /* TextToSpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450699F81CDDEADF00AE5731 /* TextToSpeech.swift */; };
+		450699FB1CDDEB4500AE5731 /* TextToSpeechSettings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 450699FA1CDDEB4500AE5731 /* TextToSpeechSettings.plist */; };
+		450699FD1CDDEB6D00AE5731 /* PlistUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450699FC1CDDEB6D00AE5731 /* PlistUtil.swift */; };
+		4533EE421CDE18E200E6AC00 /* WavPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4533EE411CDE18E200E6AC00 /* WavPlayer.swift */; };
 		45644FD21CDC64A000410DAF /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45644FD11CDC64A000410DAF /* AudioToolbox.framework */; };
 		45644FD41CDC662C00410DAF /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45644FD31CDC662C00410DAF /* AVFoundation.framework */; };
 		45644FD61CDC66AD00410DAF /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45644FD51CDC66AD00410DAF /* CoreAudio.framework */; };
@@ -17,13 +21,14 @@
 		45705F921CDA92FC00EEB6F6 /* Motor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45705F911CDA92FC00EEB6F6 /* Motor.swift */; };
 		45705F941CDA9CBB00EEB6F6 /* Servo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45705F931CDA9CBB00EEB6F6 /* Servo.swift */; };
 		45705F961CDAA6C200EEB6F6 /* ReplAi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45705F951CDAA6C200EEB6F6 /* ReplAi.swift */; };
+		4578A5A01CDE0A1900CCF6F5 /* CommonUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4578A59F1CDE0A1900CCF6F5 /* CommonUtil.swift */; };
 		45DEE3E11CD90B6600BA0B64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DEE3E01CD90B6600BA0B64 /* AppDelegate.swift */; };
 		45DEE3E31CD90B6600BA0B64 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DEE3E21CD90B6600BA0B64 /* ViewController.swift */; };
 		45DEE3E61CD90B6600BA0B64 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45DEE3E41CD90B6600BA0B64 /* Main.storyboard */; };
 		45DEE3E81CD90B6600BA0B64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45DEE3E71CD90B6600BA0B64 /* Assets.xcassets */; };
 		45DEE3EB1CD90B6600BA0B64 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45DEE3E91CD90B6600BA0B64 /* LaunchScreen.storyboard */; };
 		45DEE3F51CD90F5000BA0B64 /* Carekoma.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DEE3F41CD90F5000BA0B64 /* Carekoma.swift */; };
-		712B68829638ABBA0A4D0444 /* libPods-carekoma.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 94A5F9ACBBA5F31BAE179C54 /* libPods-carekoma.a */; };
+		87ACC48C6209BD7CC0EFF42E /* Pods_carekoma.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AEDB20E2AFCEC659E4CCB4F /* Pods_carekoma.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -41,6 +46,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		450699F81CDDEADF00AE5731 /* TextToSpeech.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextToSpeech.swift; sourceTree = "<group>"; };
+		450699FA1CDDEB4500AE5731 /* TextToSpeechSettings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TextToSpeechSettings.plist; sourceTree = "<group>"; };
+		450699FC1CDDEB6D00AE5731 /* PlistUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlistUtil.swift; sourceTree = "<group>"; };
+		4533EE411CDE18E200E6AC00 /* WavPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WavPlayer.swift; sourceTree = "<group>"; };
 		45644FD11CDC64A000410DAF /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		45644FD31CDC662C00410DAF /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		45644FD51CDC66AD00410DAF /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
@@ -50,6 +59,7 @@
 		45705F911CDA92FC00EEB6F6 /* Motor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Motor.swift; sourceTree = "<group>"; };
 		45705F931CDA9CBB00EEB6F6 /* Servo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Servo.swift; sourceTree = "<group>"; };
 		45705F951CDAA6C200EEB6F6 /* ReplAi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReplAi.swift; sourceTree = "<group>"; };
+		4578A59F1CDE0A1900CCF6F5 /* CommonUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonUtil.swift; sourceTree = "<group>"; };
 		45DEE3DD1CD90B6600BA0B64 /* carekoma.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = carekoma.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45DEE3E01CD90B6600BA0B64 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		45DEE3E21CD90B6600BA0B64 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -59,7 +69,7 @@
 		45DEE3EC1CD90B6600BA0B64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		45DEE3F21CD90DB500BA0B64 /* carekoma-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "carekoma-Bridging-Header.h"; sourceTree = "<group>"; };
 		45DEE3F41CD90F5000BA0B64 /* Carekoma.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Carekoma.swift; sourceTree = "<group>"; };
-		94A5F9ACBBA5F31BAE179C54 /* libPods-carekoma.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-carekoma.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AEDB20E2AFCEC659E4CCB4F /* Pods_carekoma.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_carekoma.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2A6889E4EC5EEA6AAABCACE /* Pods-carekoma.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-carekoma.release.xcconfig"; path = "Pods/Target Support Files/Pods-carekoma/Pods-carekoma.release.xcconfig"; sourceTree = "<group>"; };
 		E4E61682F9011B7B73001951 /* Pods-carekoma.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-carekoma.debug.xcconfig"; path = "Pods/Target Support Files/Pods-carekoma/Pods-carekoma.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -73,7 +83,7 @@
 				45644FD41CDC662C00410DAF /* AVFoundation.framework in Frameworks */,
 				45644FE81CDC78E400410DAF /* SpeechSDK.framework in Frameworks */,
 				45644FD21CDC64A000410DAF /* AudioToolbox.framework in Frameworks */,
-				712B68829638ABBA0A4D0444 /* libPods-carekoma.a in Frameworks */,
+				87ACC48C6209BD7CC0EFF42E /* Pods_carekoma.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +98,11 @@
 				45705F951CDAA6C200EEB6F6 /* ReplAi.swift */,
 				45644FEB1CDCA23100410DAF /* SpeechToText.swift */,
 				45644FED1CDCA3BD00410DAF /* SpeechToTextSettings.plist */,
+				450699F81CDDEADF00AE5731 /* TextToSpeech.swift */,
+				450699FA1CDDEB4500AE5731 /* TextToSpeechSettings.plist */,
+				450699FC1CDDEB6D00AE5731 /* PlistUtil.swift */,
+				4578A59F1CDE0A1900CCF6F5 /* CommonUtil.swift */,
+				4533EE411CDE18E200E6AC00 /* WavPlayer.swift */,
 			);
 			path = external;
 			sourceTree = "<group>";
@@ -133,7 +148,7 @@
 				45644FD51CDC66AD00410DAF /* CoreAudio.framework */,
 				45644FD31CDC662C00410DAF /* AVFoundation.framework */,
 				45644FD11CDC64A000410DAF /* AudioToolbox.framework */,
-				94A5F9ACBBA5F31BAE179C54 /* libPods-carekoma.a */,
+				6AEDB20E2AFCEC659E4CCB4F /* Pods_carekoma.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -209,6 +224,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				450699FB1CDDEB4500AE5731 /* TextToSpeechSettings.plist in Resources */,
 				45DEE3EB1CD90B6600BA0B64 /* LaunchScreen.storyboard in Resources */,
 				45644FEE1CDCA3BD00410DAF /* SpeechToTextSettings.plist in Resources */,
 				45DEE3E81CD90B6600BA0B64 /* Assets.xcassets in Resources */,
@@ -275,8 +291,12 @@
 				45DEE3F51CD90F5000BA0B64 /* Carekoma.swift in Sources */,
 				45644FEC1CDCA23100410DAF /* SpeechToText.swift in Sources */,
 				45DEE3E31CD90B6600BA0B64 /* ViewController.swift in Sources */,
+				450699FD1CDDEB6D00AE5731 /* PlistUtil.swift in Sources */,
 				45705F941CDA9CBB00EEB6F6 /* Servo.swift in Sources */,
+				450699F91CDDEADF00AE5731 /* TextToSpeech.swift in Sources */,
+				4533EE421CDE18E200E6AC00 /* WavPlayer.swift in Sources */,
 				45DEE3E11CD90B6600BA0B64 /* AppDelegate.swift in Sources */,
+				4578A5A01CDE0A1900CCF6F5 /* CommonUtil.swift in Sources */,
 				45705F921CDA92FC00EEB6F6 /* Motor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
