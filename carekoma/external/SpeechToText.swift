@@ -44,21 +44,25 @@ class SpeechToText:SpeechRecognitionProtocol {
                                                                            withSecondaryKey:secondaryKey,
                                                                            withProtocol: self)
         }
+        
     }
     
     //音声認識を開始
     func start(callback:SpeechToTextProtocol){
         self.callback = callback
+        
         let status:OSStatus = (self.micClient?.startMicAndRecognition())!
         if status != 0 {
             print("start status:\(status)")
-            //[self WriteLine:[[NSString alloc] initWithFormat:(@"Error starting audio. %@"), ConvertSpeechErrorToString(status)]];
+                //[self WriteLine:[[NSString alloc] initWithFormat:(@"Error starting audio. %@"), ConvertSpeechErrorToString(status)]];
         }
+        
     }
     
     //音声認識を終了
     func end(){
-        self.micClient?.endMicAndRecognition()
+        print("micClient:\(micClient)")
+        self.micClient?.endMicAndRecognition()        
     }
     
     //認識結果の信頼度パラーメタを文字列に変換する

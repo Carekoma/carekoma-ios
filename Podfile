@@ -6,4 +6,5 @@ use_frameworks!
 target 'carekoma' do
 pod 'konashi-ios-sdk'
 pod 'Alamofire', '~> 3.3'
+pod 'JSQMessagesViewController', '~> 7.2'
 end

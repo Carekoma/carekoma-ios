@@ -11,6 +11,7 @@
 		450699FB1CDDEB4500AE5731 /* TextToSpeechSettings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 450699FA1CDDEB4500AE5731 /* TextToSpeechSettings.plist */; };
 		450699FD1CDDEB6D00AE5731 /* PlistUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450699FC1CDDEB6D00AE5731 /* PlistUtil.swift */; };
 		4533EE421CDE18E200E6AC00 /* WavPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4533EE411CDE18E200E6AC00 /* WavPlayer.swift */; };
+		4533EE441CDE27B100E6AC00 /* ReplAiSettings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4533EE431CDE27B100E6AC00 /* ReplAiSettings.plist */; };
 		45644FD21CDC64A000410DAF /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45644FD11CDC64A000410DAF /* AudioToolbox.framework */; };
 		45644FD41CDC662C00410DAF /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45644FD31CDC662C00410DAF /* AVFoundation.framework */; };
 		45644FD61CDC66AD00410DAF /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45644FD51CDC66AD00410DAF /* CoreAudio.framework */; };
@@ -22,6 +23,10 @@
 		45705F941CDA9CBB00EEB6F6 /* Servo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45705F931CDA9CBB00EEB6F6 /* Servo.swift */; };
 		45705F961CDAA6C200EEB6F6 /* ReplAi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45705F951CDAA6C200EEB6F6 /* ReplAi.swift */; };
 		4578A5A01CDE0A1900CCF6F5 /* CommonUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4578A59F1CDE0A1900CCF6F5 /* CommonUtil.swift */; };
+		45BAC8A11D1980060054B452 /* Adxl345.m in Sources */ = {isa = PBXBuildFile; fileRef = 45BAC89C1D1980060054B452 /* Adxl345.m */; };
+		45BAC8A21D1980060054B452 /* Si114x.m in Sources */ = {isa = PBXBuildFile; fileRef = 45BAC89E1D1980060054B452 /* Si114x.m */; };
+		45BAC8A31D1980060054B452 /* Si7013.m in Sources */ = {isa = PBXBuildFile; fileRef = 45BAC8A01D1980060054B452 /* Si7013.m */; };
+		45BAC8A51D19842E0054B452 /* Uzuki.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAC8A41D19842E0054B452 /* Uzuki.swift */; };
 		45DEE3E11CD90B6600BA0B64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DEE3E01CD90B6600BA0B64 /* AppDelegate.swift */; };
 		45DEE3E31CD90B6600BA0B64 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DEE3E21CD90B6600BA0B64 /* ViewController.swift */; };
 		45DEE3E61CD90B6600BA0B64 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45DEE3E41CD90B6600BA0B64 /* Main.storyboard */; };
@@ -50,6 +55,7 @@
 		450699FA1CDDEB4500AE5731 /* TextToSpeechSettings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TextToSpeechSettings.plist; sourceTree = "<group>"; };
 		450699FC1CDDEB6D00AE5731 /* PlistUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlistUtil.swift; sourceTree = "<group>"; };
 		4533EE411CDE18E200E6AC00 /* WavPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WavPlayer.swift; sourceTree = "<group>"; };
+		4533EE431CDE27B100E6AC00 /* ReplAiSettings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ReplAiSettings.plist; sourceTree = "<group>"; };
 		45644FD11CDC64A000410DAF /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		45644FD31CDC662C00410DAF /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		45644FD51CDC66AD00410DAF /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
@@ -60,6 +66,13 @@
 		45705F931CDA9CBB00EEB6F6 /* Servo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Servo.swift; sourceTree = "<group>"; };
 		45705F951CDAA6C200EEB6F6 /* ReplAi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReplAi.swift; sourceTree = "<group>"; };
 		4578A59F1CDE0A1900CCF6F5 /* CommonUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonUtil.swift; sourceTree = "<group>"; };
+		45BAC89B1D1980060054B452 /* Adxl345.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Adxl345.h; sourceTree = "<group>"; };
+		45BAC89C1D1980060054B452 /* Adxl345.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Adxl345.m; sourceTree = "<group>"; };
+		45BAC89D1D1980060054B452 /* Si114x.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Si114x.h; sourceTree = "<group>"; };
+		45BAC89E1D1980060054B452 /* Si114x.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Si114x.m; sourceTree = "<group>"; };
+		45BAC89F1D1980060054B452 /* Si7013.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Si7013.h; sourceTree = "<group>"; };
+		45BAC8A01D1980060054B452 /* Si7013.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Si7013.m; sourceTree = "<group>"; };
+		45BAC8A41D19842E0054B452 /* Uzuki.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Uzuki.swift; sourceTree = "<group>"; };
 		45DEE3DD1CD90B6600BA0B64 /* carekoma.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = carekoma.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45DEE3E01CD90B6600BA0B64 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		45DEE3E21CD90B6600BA0B64 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -93,9 +106,11 @@
 		45705F901CDA92F000EEB6F6 /* external */ = {
 			isa = PBXGroup;
 			children = (
+				45BAC89A1D1980060054B452 /* Uzuki */,
 				45705F911CDA92FC00EEB6F6 /* Motor.swift */,
 				45705F931CDA9CBB00EEB6F6 /* Servo.swift */,
 				45705F951CDAA6C200EEB6F6 /* ReplAi.swift */,
+				4533EE431CDE27B100E6AC00 /* ReplAiSettings.plist */,
 				45644FEB1CDCA23100410DAF /* SpeechToText.swift */,
 				45644FED1CDCA3BD00410DAF /* SpeechToTextSettings.plist */,
 				450699F81CDDEADF00AE5731 /* TextToSpeech.swift */,
@@ -103,8 +118,22 @@
 				450699FC1CDDEB6D00AE5731 /* PlistUtil.swift */,
 				4578A59F1CDE0A1900CCF6F5 /* CommonUtil.swift */,
 				4533EE411CDE18E200E6AC00 /* WavPlayer.swift */,
+				45BAC8A41D19842E0054B452 /* Uzuki.swift */,
 			);
 			path = external;
+			sourceTree = "<group>";
+		};
+		45BAC89A1D1980060054B452 /* Uzuki */ = {
+			isa = PBXGroup;
+			children = (
+				45BAC89B1D1980060054B452 /* Adxl345.h */,
+				45BAC89C1D1980060054B452 /* Adxl345.m */,
+				45BAC89D1D1980060054B452 /* Si114x.h */,
+				45BAC89E1D1980060054B452 /* Si114x.m */,
+				45BAC89F1D1980060054B452 /* Si7013.h */,
+				45BAC8A01D1980060054B452 /* Si7013.m */,
+			);
+			path = Uzuki;
 			sourceTree = "<group>";
 		};
 		45DEE3D41CD90B6600BA0B64 = {
@@ -198,6 +227,11 @@
 				TargetAttributes = {
 					45DEE3DC1CD90B6600BA0B64 = {
 						CreatedOnToolsVersion = 7.3;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -226,6 +260,7 @@
 			files = (
 				450699FB1CDDEB4500AE5731 /* TextToSpeechSettings.plist in Resources */,
 				45DEE3EB1CD90B6600BA0B64 /* LaunchScreen.storyboard in Resources */,
+				4533EE441CDE27B100E6AC00 /* ReplAiSettings.plist in Resources */,
 				45644FEE1CDCA3BD00410DAF /* SpeechToTextSettings.plist in Resources */,
 				45DEE3E81CD90B6600BA0B64 /* Assets.xcassets in Resources */,
 				45DEE3E61CD90B6600BA0B64 /* Main.storyboard in Resources */,
@@ -291,11 +326,15 @@
 				45DEE3F51CD90F5000BA0B64 /* Carekoma.swift in Sources */,
 				45644FEC1CDCA23100410DAF /* SpeechToText.swift in Sources */,
 				45DEE3E31CD90B6600BA0B64 /* ViewController.swift in Sources */,
+				45BAC8A31D1980060054B452 /* Si7013.m in Sources */,
 				450699FD1CDDEB6D00AE5731 /* PlistUtil.swift in Sources */,
 				45705F941CDA9CBB00EEB6F6 /* Servo.swift in Sources */,
 				450699F91CDDEADF00AE5731 /* TextToSpeech.swift in Sources */,
 				4533EE421CDE18E200E6AC00 /* WavPlayer.swift in Sources */,
+				45BAC8A21D1980060054B452 /* Si114x.m in Sources */,
+				45BAC8A51D19842E0054B452 /* Uzuki.swift in Sources */,
 				45DEE3E11CD90B6600BA0B64 /* AppDelegate.swift in Sources */,
+				45BAC8A11D1980060054B452 /* Adxl345.m in Sources */,
 				4578A5A01CDE0A1900CCF6F5 /* CommonUtil.swift in Sources */,
 				45705F921CDA92FC00EEB6F6 /* Motor.swift in Sources */,
 			);

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import konashi_ios_sdk
 
 /** BD6211F を使ってモータ駆動させる為のクラス
  *  接続
@@ -29,7 +30,7 @@ class Motor {
     let period:UInt32 = 20*1000
     
     //PWMデューティ
-    let duty:UInt32 = UInt32(20*1000*0.6)
+    let duty:UInt32 = UInt32(20*1000*0.7)
     
     //コンストラクタ
     private init(){
@@ -51,13 +52,13 @@ class Motor {
     
     //前進
     func forward(){
-        Konashi.pwmDuty(FIN, duty: duty)
-        Konashi.pwmDuty(RIN, duty: 0)
+        Konashi.pwmDuty(FIN, duty: 0)
+        Konashi.pwmDuty(RIN, duty: duty)
     }
     
     //後進
     func backward(){
-        Konashi.pwmDuty(FIN, duty: 0)
-        Konashi.pwmDuty(RIN, duty: duty)
+        Konashi.pwmDuty(FIN, duty: duty)
+        Konashi.pwmDuty(RIN, duty: 0)
     }
 }

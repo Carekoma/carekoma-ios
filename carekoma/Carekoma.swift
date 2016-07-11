@@ -7,11 +7,13 @@
 //
 
 import Foundation
+import konashi_ios_sdk
 
 /** Carekoma の メイン処理
  */
 class Carekoma {
     
+    private var uzuki:Uzuki?
     // モータ制御
     private var motor:Motor?
     
@@ -39,17 +41,22 @@ class Carekoma {
         //デバイスから切断された時
         Konashi.shared().disconnectedHandler = {() -> Void in
             print("disconnected")
+            
+            //再度 検索
+            self.find()
         }
         
         //使用可能状態になった時
         Konashi.shared().readyHandler = {[weak self] () -> Void in
-            
             print("ready")
-            
-            //I2C利用
-            Konashi.i2cMode(KonashiI2CMode.Enable100K)
-            
             if let weakSelf = self {
+                //Uzuki 利用
+                weakSelf.uzuki = Uzuki.sharedInstance
+                weakSelf.uzuki!.setup()
+                weakSelf.uzuki!.setAdxl345SensorCallback({ (ax, ay, az) in
+                    print("ax:\(ax) ay:\(ay) az:\(az)")
+                })
+                
                 //モータ初期化
                 weakSelf.motor = Motor.sharedInstance
                 
@@ -60,11 +67,18 @@ class Carekoma {
         
         //音声認識を初期化
         speechToText = SpeechToText.sharedInstance;
+        
+        //TODO: プッシュ型のメッセージを実装する        
     }
     
     //デバイス検索
     func find(){
         Konashi.find()
+    }
+
+    //デバイス検索
+    func find(name:String){
+        Konashi.findWithName(name)
     }
     
     //移動方向

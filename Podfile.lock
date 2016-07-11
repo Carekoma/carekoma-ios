@@ -1,13 +1,19 @@
 PODS:
   - Alamofire (3.3.1)
+  - JSQMessagesViewController (7.2.0):
+    - JSQSystemSoundPlayer (~> 2.0.1)
+  - JSQSystemSoundPlayer (2.0.1)
   - konashi-ios-sdk (4.1.0)
 
 DEPENDENCIES:
   - Alamofire (~> 3.3)
+  - JSQMessagesViewController (~> 7.2)
   - konashi-ios-sdk
 
 SPEC CHECKSUMS:
   Alamofire: 369bc67b6f5ac33ded3648d7bd21c5bfb91c2ecc
+  JSQMessagesViewController: 73cab48aa92fc2d512f3b6724f3425cc47a19eb5
+  JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
   konashi-ios-sdk: dd545f091380e8adf58114bf270f24f79d8b96cc
 
 COCOAPODS: 0.39.0

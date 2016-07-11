@@ -54,49 +54,49 @@ class TextToSpeech {
     
     //合成するテキスト
     func setText(text:String) -> TextToSpeech{
-        self.params!["text"] = text;
+        self.params!["text"] = text
         return self
     }
     
     //話者名
     func setSpeaker(speaker:SpeakerType) -> TextToSpeech{
-        self.params!["speaker"] = speaker.rawValue;
+        self.params!["speaker"] = speaker.rawValue
         return self
     }
     
     //感情カテゴリ
     func setEmotion(emotion:String) -> TextToSpeech{
-        self.params!["emotion"] = emotion;
+        self.params!["emotion"] = emotion
         return self
     }
     
     //感情レベル 1,2
     func setEmotionLevel(emotion_level:String) -> TextToSpeech{
-        self.params!["emotion_level"] = emotion_level;
+        self.params!["emotion_level"] = emotion_level
         return self
     }
     
     //音の高低 50 〜 200
     func setPitch(pitch:String) -> TextToSpeech{
-        self.params!["pitch"] = pitch;
+        self.params!["pitch"] = pitch
         return self
     }
     
     //話す速度 50 〜 400
     func setSpeed(speed:String) -> TextToSpeech{
-        self.params!["speed"] = speed;
+        self.params!["speed"] = speed
         return self
     }
     
     //音量 50 〜 200
     func setVolume(volume:String) -> TextToSpeech{
-        self.params!["volume"] = volume;
+        self.params!["volume"] = volume
         return self
     }
     
     //音声ファイルフォーマット
     func setFormat(format:String) -> TextToSpeech{
-        self.params!["format"] = format;
+        self.params!["format"] = format
         return self
     }
     
@@ -123,7 +123,7 @@ class TextToSpeech {
             
             let url = "\(TextToSpeech.TEXT_TO_SPEECH_API_URL)?APIKEY=\(apiKey!)"
             print("url:\(url)")
-            print("params:\(params!)")
+            print("params:\(self.params!)")
             
             Alamofire.request(.POST, url, headers: headers, parameters: self.params!).response { request, response, data, error in
                 if let error = error {

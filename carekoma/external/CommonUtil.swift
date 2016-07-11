@@ -22,4 +22,21 @@ class CommonUtil {
     static func dispatch_async_global(block: () -> ()) {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), block)
     }
+    
+    //日付フォーマット指定して文字列を取得する
+    static func dateToFormatString(format:String,date:NSDate,locale:String) -> String {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.locale = NSLocale(localeIdentifier: locale)
+        dateFormatter.dateFormat = format
+        return dateFormatter.stringFromDate(date)
+    }
+    
+    //スリープ
+    static func sleep(d:Double,callback:(()->Void)){
+        let delay = d * Double(NSEC_PER_SEC)
+        let time  = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
+        dispatch_after(time, dispatch_get_main_queue(), {
+            callback()
+        })
+    }
 }

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import konashi_ios_sdk
 
 /** サーボ制御
  *  接続
