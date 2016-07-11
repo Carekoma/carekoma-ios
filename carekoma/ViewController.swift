@@ -53,8 +53,8 @@ class ViewController: JSQMessagesViewController {
         print("viewDidAppear")
         
         //デバイス検索 接続
-        let name = "konashi2-f014f1"
-        Carekoma.sharedInstance.find(name)
+        //let name = "konashi2-f014f1"
+        Carekoma.sharedInstance.find()
         
         //ユーザーID取得
         ReplAi.sharedInstance.registration { (appUserId:String) in
