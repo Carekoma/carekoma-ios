@@ -8,15 +8,19 @@
 
 import Foundation
 import konashi_ios_sdk
+import SwiftyJSON
 
 //Uzuki 利用のためのクラス
-class Uzuki{
+class Uzuki {
     
     //センサー値の確認タイマー
     var checkSensorTimer:NSTimer?
     
     //センサー値を確認するインデックス
     var chkIndex:Int = 0;
+    
+    //各センサーから読み込んだ値を保持するクラス
+    var uzukiObject:UzukiObject = UzukiObject()
     
     //シングルトン インスタンス作成
     class var sharedInstance : Uzuki {
@@ -52,8 +56,13 @@ class Uzuki{
                 weakSelf.checkSensor(data)
                 
                 if weakSelf.chkIndex == 0 {
-                    //TODO: 現在の状態を保持するクラスが全部埋まったハズなのでコールバックする
-                    print("callback!!!")
+                    //現在の状態を保持するクラスが全部埋まったハズなのでコールバックする
+                    //print("callback!!!")
+                    //コールバックが設定されていたらコールバックする
+                    if let callback = weakSelf.sensorCallback {
+                        callback(uzukiObject: weakSelf.uzukiObject)
+                    }
+
                 }
             }
         }
@@ -88,11 +97,11 @@ class Uzuki{
     }
     
     //コールバック
-    var adxl345SensorCallback:((ax:Double,ay:Double,az:Double)->Void)?
+    var sensorCallback:((uzukiObject:UzukiObject)->Void)?
     
     //コールバックを設定
-    func setAdxl345SensorCallback(callback:(ax:Double,ay:Double,az:Double)->Void){
-        self.adxl345SensorCallback = callback
+    func setSensorCallback(callback:(uzukiObject:UzukiObject)->Void){
+        self.sensorCallback = callback
     }
     
     //センサー値 確認タイマーを停止
@@ -105,7 +114,7 @@ class Uzuki{
     
     //センサーの値を取得
     func checkSensor(data:NSData){
-        print("checkSensor chkIndex:\(chkIndex)")
+        //print("checkSensor chkIndex:\(chkIndex)")
         switch self.chkIndex {
         case 0:
             //Adxl345 加速度センサーの値を取得
@@ -147,11 +156,8 @@ class Uzuki{
         let ay = Double(CUnsignedShort(d[3])<<8^CUnsignedShort(d[2]))/256.0
         let az = Double(CUnsignedShort(d[5])<<8^CUnsignedShort(d[4]))/256.0
 
-        //コールバックが設定されていたらコールバックする
-        if let callback = self.adxl345SensorCallback {
-            callback(ax:ax,ay:ay,az:az)
-        }
-        //TODO: 現在の状態を保持するクラスに入れる
+        //現在の状態を保持するクラスに入れる
+        uzukiObject.acceleration = ["x":ax,"y":ay,"z":az]
     }
     
     //湿度センサー値を読み込む
@@ -161,8 +167,8 @@ class Uzuki{
         Konashi.i2cStopCondition()
         
         let humidity = Double((CUnsignedShort(d[0]) << 8 ^ CUnsignedShort(d[1]))) * 125.0 / 65536.0 - 6.0
-        print("humidity:\(humidity)")
-        //TODO: 現在の状態を保持するクラスに入れる
+        // 現在の状態を保持するクラスに入れる
+        uzukiObject.humidity = humidity
     }
     
     //温度センサー値を確認する
@@ -173,12 +179,8 @@ class Uzuki{
         
         let temperature = (Double) ((CUnsignedShort(d[0]) << 8 ^ CUnsignedShort(d[1]))) * 175.72 / 65536.0 - 46.85
         
-        print("temperature:\(temperature)")
-        //TODO: 現在の状態を保持するクラスに入れる
-        
-        // 不快指数(Discomfort Index)の計算
-        // 0.81T+0.01RH(0.99T-14.3)+46.3
-        //let dcindex = 0.81 * temperature + 0.01 * humidity * ( 0.99 * temp - 14.3 ) + 46.3
+        //現在の状態を保持するクラスに入れる
+        uzukiObject.temperature = temperature
     }
     
     //UVセンサー値を確認する
@@ -188,8 +190,8 @@ class Uzuki{
         Konashi.i2cStopCondition()
         
         let uvi = (Int) ( (Double) ((CUnsignedShort(d[1]) << 8 | CUnsignedShort(d[0]))) / 100.0)
-        print("uvi:\(uvi)")
-        //TODO: 現在の状態を保持するクラスに入れる
+        //現在の状態を保持するクラスに入れる
+        uzukiObject.uvi = uvi
     }
     
     //近接センサー値を確認する
@@ -198,7 +200,47 @@ class Uzuki{
         Konashi.i2cRead(2, data: d)
         Konashi.i2cStopCondition()
         let prox = log((Double)(CUnsignedShort(d[1]) << 8 | CUnsignedShort(d[0])))
-        print("prox:\(prox)")
-        //TODO: 現在の状態を保持するクラスに入れる
+
+        //現在の状態を保持するクラスに入れる
+        uzukiObject.proximity = prox
+    }
+}
+
+class UzukiObject {
+    //加速度
+    var acceleration:[String:Double]?
+    
+    //湿度
+    var humidity:Double?
+    
+    //温度
+    var temperature:Double?
+    
+    //UV
+    var uvi:Int?
+    
+    //近接
+    var proximity:Double?
+    
+    //コンストラクタ
+    func UzukiObject(){}
+    
+    //不快指数
+    func dcindex() -> Double {
+        // 不快指数(Discomfort Index)の計算
+        // 0.81T+0.01RH(0.99T-14.3)+46.3
+        let dcindex = 0.81 * temperature! + 0.01 * humidity! * ( 0.99 * temperature! - 14.3 ) + 46.3
+        return dcindex
+    }
+    
+    func toJSON()->String {
+        return JSON([
+                "acceleration":acceleration!,
+                "humidity":humidity!,
+                "temperature":temperature!,
+                "uvi":uvi!,
+                "proximity":proximity!,
+                "dcindex":dcindex()
+            ]).rawString()!
     }
 }

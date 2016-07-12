@@ -8,12 +8,18 @@
 
 import Foundation
 import konashi_ios_sdk
+import SwiftyJSON
 
 /** Carekoma の メイン処理
  */
 class Carekoma {
     
+    //デバイスID
+    private let deviceId:String = "N2vtrYf9"
+    
+    //各センサー
     private var uzuki:Uzuki?
+    
     // モータ制御
     private var motor:Motor?
     
@@ -33,6 +39,10 @@ class Carekoma {
     
     //コンストラクタ
     private init(){
+        //NCMB サーバを初期設定
+        Ncmb.sharedInstance.initialize()
+        Ncmb.sharedInstance.dbTest()
+        
         //デバイスと接続された時
         Konashi.shared().connectedHandler = {() -> Void in
             print("connected")
@@ -53,8 +63,12 @@ class Carekoma {
                 //Uzuki 利用
                 weakSelf.uzuki = Uzuki.sharedInstance
                 weakSelf.uzuki!.setup()
-                weakSelf.uzuki!.setAdxl345SensorCallback({ (ax, ay, az) in
-                    print("ax:\(ax) ay:\(ay) az:\(az)")
+                weakSelf.uzuki!.setSensorCallback({ (uzukiObject) in
+                    //print("uzukiObject \(uzukiObject)")
+                    //ここでセンサーデータをサーバに送る
+                    Ncmb.sharedInstance.addSensorLog(weakSelf.deviceId,data:uzukiObject.toJSON())
+                    
+                    //TODO: センサー値 内容によって会話シナリオを実行する
                 })
                 
                 //モータ初期化
@@ -67,8 +81,6 @@ class Carekoma {
         
         //音声認識を初期化
         speechToText = SpeechToText.sharedInstance;
-        
-        //TODO: プッシュ型のメッセージを実装する        
     }
     
     //デバイス検索

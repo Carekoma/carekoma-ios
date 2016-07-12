@@ -33,8 +33,8 @@ class ViewController: JSQMessagesViewController {
         self.outgoingBubble = bubbleFactory.outgoingMessagesBubbleImageWithColor(UIColor.jsq_messageBubbleGreenColor())
         
         //アバターの設定
-        self.incomingAvatar = JSQMessagesAvatarImageFactory.avatarImageWithImage(UIImage(named: "icon75")!, diameter: 64)
-        self.outgoingAvatar = JSQMessagesAvatarImageFactory.avatarImageWithImage(UIImage(named: "icon75")!, diameter: 64)
+        self.incomingAvatar = JSQMessagesAvatarImageFactory.avatarImageWithImage(UIImage(named: "device75")!, diameter: 64)
+        self.outgoingAvatar = JSQMessagesAvatarImageFactory.avatarImageWithImage(UIImage(named: "user75")!, diameter: 64)
         
         //メッセージデータの配列を初期化
         self.messages = []

@@ -23,6 +23,8 @@
 		45705F941CDA9CBB00EEB6F6 /* Servo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45705F931CDA9CBB00EEB6F6 /* Servo.swift */; };
 		45705F961CDAA6C200EEB6F6 /* ReplAi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45705F951CDAA6C200EEB6F6 /* ReplAi.swift */; };
 		4578A5A01CDE0A1900CCF6F5 /* CommonUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4578A59F1CDE0A1900CCF6F5 /* CommonUtil.swift */; };
+		459D28321D34DBEF00303998 /* Ncmb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459D28311D34DBEF00303998 /* Ncmb.swift */; };
+		459D28341D34E63400303998 /* NcmbSettings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 459D28331D34E63400303998 /* NcmbSettings.plist */; };
 		45BAC8A11D1980060054B452 /* Adxl345.m in Sources */ = {isa = PBXBuildFile; fileRef = 45BAC89C1D1980060054B452 /* Adxl345.m */; };
 		45BAC8A21D1980060054B452 /* Si114x.m in Sources */ = {isa = PBXBuildFile; fileRef = 45BAC89E1D1980060054B452 /* Si114x.m */; };
 		45BAC8A31D1980060054B452 /* Si7013.m in Sources */ = {isa = PBXBuildFile; fileRef = 45BAC8A01D1980060054B452 /* Si7013.m */; };
@@ -66,6 +68,8 @@
 		45705F931CDA9CBB00EEB6F6 /* Servo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Servo.swift; sourceTree = "<group>"; };
 		45705F951CDAA6C200EEB6F6 /* ReplAi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReplAi.swift; sourceTree = "<group>"; };
 		4578A59F1CDE0A1900CCF6F5 /* CommonUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonUtil.swift; sourceTree = "<group>"; };
+		459D28311D34DBEF00303998 /* Ncmb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ncmb.swift; sourceTree = "<group>"; };
+		459D28331D34E63400303998 /* NcmbSettings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = NcmbSettings.plist; sourceTree = "<group>"; };
 		45BAC89B1D1980060054B452 /* Adxl345.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Adxl345.h; sourceTree = "<group>"; };
 		45BAC89C1D1980060054B452 /* Adxl345.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Adxl345.m; sourceTree = "<group>"; };
 		45BAC89D1D1980060054B452 /* Si114x.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Si114x.h; sourceTree = "<group>"; };
@@ -119,6 +123,8 @@
 				4578A59F1CDE0A1900CCF6F5 /* CommonUtil.swift */,
 				4533EE411CDE18E200E6AC00 /* WavPlayer.swift */,
 				45BAC8A41D19842E0054B452 /* Uzuki.swift */,
+				459D28311D34DBEF00303998 /* Ncmb.swift */,
+				459D28331D34E63400303998 /* NcmbSettings.plist */,
 			);
 			path = external;
 			sourceTree = "<group>";
@@ -263,6 +269,7 @@
 				4533EE441CDE27B100E6AC00 /* ReplAiSettings.plist in Resources */,
 				45644FEE1CDCA3BD00410DAF /* SpeechToTextSettings.plist in Resources */,
 				45DEE3E81CD90B6600BA0B64 /* Assets.xcassets in Resources */,
+				459D28341D34E63400303998 /* NcmbSettings.plist in Resources */,
 				45DEE3E61CD90B6600BA0B64 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -329,6 +336,7 @@
 				45BAC8A31D1980060054B452 /* Si7013.m in Sources */,
 				450699FD1CDDEB6D00AE5731 /* PlistUtil.swift in Sources */,
 				45705F941CDA9CBB00EEB6F6 /* Servo.swift in Sources */,
+				459D28321D34DBEF00303998 /* Ncmb.swift in Sources */,
 				450699F91CDDEADF00AE5731 /* TextToSpeech.swift in Sources */,
 				4533EE421CDE18E200E6AC00 /* WavPlayer.swift in Sources */,
 				45BAC8A21D1980060054B452 /* Si114x.m in Sources */,
